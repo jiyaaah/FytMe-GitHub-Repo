@@ -18,3 +18,10 @@ jobs:
 
     - name: Deploy
       run: echo "Pretend we're deploying FytMe to server..."
+      env:
+        JIRA_ISSUE: ${{ github.head_ref }}
+
+    # Tell GitHub this is a deployment
+    environment:
+      name: production
+      url: https://fytme.yourdomain.com  # Optional: your actual deployed site URL
