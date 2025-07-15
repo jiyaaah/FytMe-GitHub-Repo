@@ -1,0 +1,24 @@
+name: Deploy FytMe App
+
+on:
+  push:
+    branches:
+      - main
+      - 'feature/*'
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Run build
+      run: echo "Building FytMe app..."
+
+    - name: Deploy
+      run: echo "Pretend we're deploying FytMe to server..."
+
+    environment:
+      name: production
